@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AkiraQuiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+  </head>
+  <body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                    <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+<DIV  class="mx-auto" style="width: 450px;">
+<h1>Faça seu registro</h1>
+<form method="POST" action="{{      ('cadastro') }}">
+    <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+            <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
+            <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
+            <p><label>Email:</label> <input class="form-control" type="email" name="email" required></p>
+            <p><label>CPF:</label> <input type="text" id="cpf" name="cpf" class="form-control" placeholder="12345678901" required></p>
+
+            <p><button class="btn btn-primary" type="submit">Confirmar</button></p>
+
+
+        </form>
+<a href="/"><button class="btn btn-danger btn-salvar">Voltar</button></a>
+
+    </div>
+</div>
+</body>
+</html>

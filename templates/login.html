@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Akira Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+  </head>
+  <body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                    <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+<DIV  class="mx-auto" style="width: 450px;">
+<h1>Faça seu login</h1>
+<form method="POST" action="{{ url_for('autenticar') }}">
+    <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+            <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
+            <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
+            <p><button class="btn btn-primary" type="submit">Entrar</button></p>
+
+
+
+        </form>
+
+<a href="registrar"><button class="btn btn-primary btn-salvar">Registrar-se</button></a>
+<a href="/recuperar"><button class="btn btn-success btn-salvar">Recuperar Senha</button></a>
+<a href="/"><button class="btn btn-danger btn-salvar">Voltar</button></a>
+
+
+
+    </div>
+</div>
+</body>
+</html>
