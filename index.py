@@ -65,14 +65,14 @@ def cadastro():
     if len(passwd) == num_caract:
         passwd = passwd
 
-    email_from = "temperoapp1@gmail.com"
+    email_from = "akiraquizsuporte@gmail.com"
     email_to = '{}'.format(email)
 
     smtp = "smtp.gmail.com"
 
     server = smtplib.SMTP(smtp, 587)
     server.starttls()
-    server.login('akiraquizsuporte@gmail.com', 'tempers153')
+    server.login('akiraquizsuporte@gmail.com', 'AQUI VAI SUA SENHA, NÃO RECOMENDADO DEIXAR DENTRO DO CODIGO')
 
     msg = '''
         AkiraQuiz Suporte,
@@ -108,7 +108,7 @@ def recuperarsenha():
 
     server = smtplib.SMTP(smtp, 587)
     server.starttls()
-    server.login('akiraquizsuporte@gmail.com', 'tempers153')
+    server.login('akiraquizsuporte@gmail.com', 'AQUI VAI SUA SENHA, NÃO RECOMENDADO DEIXAR DENTRO DO CODIGO')
 
     char = '0123456789abcdefghijlmnopqrstuwvxz@!QWERTYUIOPASDFGHJKLZXCVBNM'
     passwd = ""
